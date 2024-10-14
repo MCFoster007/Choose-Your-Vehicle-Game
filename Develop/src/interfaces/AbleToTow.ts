@@ -1,7 +1,9 @@
 // import the classes
+import inquirer from "inquirer";
 import Truck from "../classes/Truck.js";
 import Motorbike from "../classes/Motorbike.js";
 import Car from "../classes/Car.js";
+import Wheel from "./Wheel.js";
 
 // define the interface
 interface AbleToTow {
