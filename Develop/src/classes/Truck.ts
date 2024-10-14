@@ -53,22 +53,68 @@ class Truck {
   // TODO: The types should be as follows: vin (string), color (string), make (string), model (string), year (number), weight (number), topSpeed (number), wheels (Wheel[]), towingCapacity (number)
 
   // TODO: Create a constructor that accepts the properties of the Truck class
-    // TODO: The constructor should call the constructor of the parent class, Vehicle
-    // TODO: The constructor should initialize the properties of the Truck class
-    // TODO: The constructor should check if the wheels array has 4 elements and create 4 new default Wheel objects if it does not
+  // TODO: The constructor should call the constructor of the parent class, Vehicle
+  // TODO: The constructor should initialize the properties of the Truck class
+  // TODO: The constructor should check if the wheels array has 4 elements and create 4 new default Wheel objects if it does not
 
   // TODO: Implement the tow method from the AbleToTow interface
-  tow(vehicle: Truck | Motorbike | Car): void {
 
+    // declare the properties
     interface AbleToTow {
-      // declare the properties
       towingCapacity: number;
-      // tow method takes a truck or a motorbike or a car as an argument
-      
   }
   
-  // export the interface
-  export default AbleToTow;
+  class Vehicle {
+      make: string;
+      model: string;
+  
+      constructor(make: string, model: string) {
+          this.make = make;
+          this.model = model;
+      }
+  }
+  
+  class Truck extends Vehicle implements AbleToTow {
+      towingCapacity: number;
+  
+      constructor(make: string, model: string, towingCapacity: number) {
+          super(make, model);
+          this.towingCapacity = towingCapacity;
+      }
+  
+      tow(vehicle: Vehicle): void {
+          console.log(`Truck ${this.make} ${this.model} is towing ${vehicle.make} ${vehicle.model}!`);
+      }
+  }
+  
+  class Motorbike extends Vehicle implements AbleToTow {
+      towingCapacity: number;
+  
+      constructor(make: string, model: string, towingCapacity: number) {
+          super(make, model);
+          this.towingCapacity = towingCapacity;
+      }
+  
+      tow(vehicle: Vehicle): void {
+          console.log(`Motorbike ${this.make} ${this.model} is towing ${vehicle.make} ${vehicle.model}!`);
+      }
+  }
+  
+  class Car extends Vehicle implements AbleToTow {
+      towingCapacity: number;
+  
+      constructor(make: string, model: string, towingCapacity: number) {
+          super(make, model);
+          this.towingCapacity = towingCapacity;
+      }
+  
+      tow(vehicle: Vehicle): void {
+          console.log(`Car ${this.make} ${this.model} is towing ${vehicle.make} ${vehicle.model}!`);
+      }
+  }
+ // tow method takes a truck or a motorbike or a car as an argument
+// export the interface
+export default AbleToTow;
 
     // TODO: Get the make an model of the vehicle if it exists
     // TODO: Check if the vehicle's weight is less than or equal to the truck's towing capacity
@@ -79,39 +125,39 @@ class Truck {
   // TODO: Override the printDetails method from the Vehicle class
     // TODO: The method should call the printDetails method of the parent class
     // TODO: The method should log the details of the Truck
-    
+
     // TODO: The details should include the VIN, make, model, year, weight, top speed, color, towing capacity, and wheels
     override printDetails(): void {
-      // Call the printDetails method of the parent class, Vehicle
-      super.printDetails();
-  
-      // Print details of the Car class
-      console.log(`VIN: ${this.vin}`);
-      console.log(`Color: ${this.color}`);
-      console.log(`Make: ${this.make}`);
-      console.log(`Model: ${this.model}`);
-      console.log(`Year: ${this.year}`);
-      console.log(`Weight: ${this.weight} lbs`);
-      console.log(`Top Speed: ${this.topSpeed} mph`);
-  
-      // Print details of the wheels
-      console.log(
-        `Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`
-      );
-      console.log(
-        `Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`
-      );
-      console.log(
-        `Wheel 3: ${this.wheels[2].getDiameter} inch with a ${this.wheels[2].getTireBrand} tire`
-      );
-      console.log(
-        `Wheel 4: ${this.wheels[3].getDiameter} inch with a ${this.wheels[3].getTireBrand} tire`
-      );
-    }
+  // Call the printDetails method of the parent class, Vehicle
+  super.printDetails();
+
+  // Print details of the Car class
+  console.log(`VIN: ${this.vin}`);
+  console.log(`Color: ${this.color}`);
+  console.log(`Make: ${this.make}`);
+  console.log(`Model: ${this.model}`);
+  console.log(`Year: ${this.year}`);
+  console.log(`Weight: ${this.weight} lbs`);
+  console.log(`Top Speed: ${this.topSpeed} mph`);
+
+  // Print details of the wheels
+  console.log(
+    `Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`
+  );
+  console.log(
+    `Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`
+  );
+  console.log(
+    `Wheel 3: ${this.wheels[2].getDiameter} inch with a ${this.wheels[2].getTireBrand} tire`
+  );
+  console.log(
+    `Wheel 4: ${this.wheels[3].getDiameter} inch with a ${this.wheels[3].getTireBrand} tire`
+  );
+}
   }
-  
-  // Export the Car class as the default export
-  export default Car;
+
+// Export the Car class as the default export
+export default Car;
   
   }
 
