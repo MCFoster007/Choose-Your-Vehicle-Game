@@ -407,9 +407,29 @@ class Cli {
             }
           }
         }
-        // TODO: add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous.
+        // TODO: add statements to perform the tow action only if the selected vehicle is a truck. 
+        //Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. 
+        //After calling the findVehicleToTow method, you will need to return to avoid instantly calling 
+        //the performActions method again since findVehicleToTow is asynchronous.
         // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike
-        else if (answers.action === 'Select or create another vehicle') {
+        function performActions(selectedVehicle)) {
+          if (selectedVehicle.type === 'truck') {
+  
+              findVehicleToTow(selectedVehicle)
+                  .then(() => {
+                      // You can handle the result here if needed
+                  });
+              return; // Return to avoid calling performActions again immediately
+          }
+      
+          if (selectedVehicle.type === 'motorbike') {
+              // Perform the wheelie action
+              performWheelie(selectedVehicle);
+              return; // Return after performing the wheelie
+          }
+      
+        }
+         else if (answers.action === 'Select or create another vehicle') {
           // start the cli to return to the initial prompt if the user wants to select or create another vehicle
           this.startCli();
           return;
@@ -419,7 +439,7 @@ class Cli {
         }
         if (!this.exit) {
           // if the user does not want to exit, perform actions on the selected vehicle
-          this.performActions();
+          this.performActions(selectedVehicle);
         }
       });
   }
