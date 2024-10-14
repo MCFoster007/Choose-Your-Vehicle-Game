@@ -60,6 +60,16 @@ class Truck {
   // TODO: Implement the tow method from the AbleToTow interface
   tow(vehicle: Truck | Motorbike | Car): void {
 
+    interface AbleToTow {
+      // declare the properties
+      towingCapacity: number;
+      // tow method takes a truck or a motorbike or a car as an argument
+      
+  }
+  
+  // export the interface
+  export default AbleToTow;
+
     // TODO: Get the make an model of the vehicle if it exists
     // TODO: Check if the vehicle's weight is less than or equal to the truck's towing capacity
     // TODO: If it is, log that the vehicle is being towed
