@@ -42,7 +42,11 @@ class Motorbike extends Vehicle {
       this.wheels = wheels;
     }
   }
-
+  // TODO: Implement the wheelie method
+    // TODO: The method should log the message "Motorbike [make] [model] is doing a wheelie!"
+    wheelie(){
+      console.log(`Motorbike ${this.make} ${this.model} is doing a wheelie!`);
+  }
 
   // TODO: Declare properties of the Motorbike class
   // TODO: The properties should include vin, color, make, model, year, weight, top speed, and wheels
@@ -53,11 +57,7 @@ class Motorbike extends Vehicle {
     // TODO: The constructor should initialize the properties of the Motorbike class
     // TODO: The constructor should check if the wheels array has 2 elements and create 2 new default Wheel objects if it does not
 
-  // TODO: Implement the wheelie method
-    // TODO: The method should log the message "Motorbike [make] [model] is doing a wheelie!"
-wheelie(){
-    console.log(`Motorbike ${this.make} ${this.model} is doing a wheelie!`);
-}
+
   // TODO: Override the printDetails method from the Vehicle class
   // TODO: The method should call the printDetails method of the parent class
   // TODO: The method should log the details of the Motorbike
@@ -65,10 +65,12 @@ wheelie(){
 }
 
 // Call the printDetails method of the parent class, Vehicle
-
-override printDetails(): void {
-  
-  super [printDetails()],
+function printDetails() {
+  throw new Error('Function not implemented.');
+}
+override  printDetails() : void  {
+  // Call the printDetails method of the parent class, Vehicle
+  super.printDetails() ,
 
   // Print details of the Car class
   console.log(`VIN: ${this.vin}`),
@@ -86,11 +88,9 @@ override printDetails(): void {
   console.log(
     `Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`
   ),
- }
+}
 }
 // Export the Motorbike class as the default export
 export default Motorbike;
 
-function printDetails() {
-  throw new Error('Function not implemented.');
-}
+

@@ -4,6 +4,8 @@ import Truck from "./Truck.js";
 import Car from "./Car.js";
 import Motorbike from "./Motorbike.js";
 import Wheel from "./Wheel.js";
+// import { constructor } from "assert";
+import Vehicle from "./Vehicle.js";
 
 // define the Cli class
 class Cli {
@@ -14,6 +16,9 @@ class Cli {
   selectedVehicleVin: string | undefined;
   exit: boolean = false;
   startCli: any;
+
+
+  
 
   // TODO: Update the constructor to accept Truck and Motorbike objects as well
   constructor(vehicles: (Car| Truck | Motorbike)[]) {
@@ -29,17 +34,24 @@ class Cli {
     );
   }
 
+  interface chooseVehicle {
+    vin: string;
+    make: string;
+    model: string;
+  }
+
+
   // method to choose a vehicle from existing vehicles
-  chooseVehicle(): void {
+  chooseVehicle();  {
     inquirer
       .prompt([
         {
           type: 'list',
           name: 'selectedVehicleVin',
           message: 'Select a vehicle to perform an action on',
-          choices: this.vehicles.map((vehicle) => {
+          choices: this.vehicles.map((vehicle: { vin: any; make: any; model: any; }) => {
             return {
-              name: `${vehicle.vin} -- ${vehicle.make} ${vehicle.model}`,
+              name:( `${vehicle.vin} -- ${vehicle.make} ${vehicle.model}`),
               value: vehicle.vin,
             };
           }),
@@ -68,17 +80,18 @@ class Cli {
           choices: ['Car', 'Truck', 'Motorbike'],
         },
       ])
-      .then(answers: { vehicleType: string, createCar: () => void;
-         createTruck: () => void; 
-         createMotorbike: () => void; }) => {
-          
+      .then((answers: { vehicleType: string; createCar: any; createTruck: any; createMotorbike: any; }) => { 
+        // if (answers.vehicleType: string, createCar: () => void;
+        //  createTruck: () => void; 
+        //  createMotorbike: () => void; }) => {
+
         if (answers.vehicleType === 'Car') {
           // create a car
           return this.createVehicle = (answers.createCar);
-        } else if {
+        } else if 
           (answers.vehicleType === 'Truck') {
             return this.createVehicle = (answers.createTruck);
-          } else if {
+          } else if 
             (answers.vehicleType === 'Motorbike'){
               return this.createVehicle = (answers.createMotorbike);
             };
@@ -197,7 +210,8 @@ class Cli {
               parseInt(answers.year),
               parseInt(answers.weight),
               parseInt(answers.topSpeed),
-              parseInt(answers.towingCapacity) // Ensure you include towing capacity if needed
+              parseInt(answers.towingCapacity),      
+              // Ensure you include towing capacity if needed
             []
             );
             // Push the truck to the vehicles array
