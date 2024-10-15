@@ -12,6 +12,7 @@ class Motorbike extends Vehicle {
   weight: number;
   topSpeed: number;
   wheels: Wheel[];
+  motorbike1Wheels: any;
 
   // Constructor for the Car class
   constructor(
@@ -41,11 +42,11 @@ class Motorbike extends Vehicle {
     } else {
       this.wheels = wheels;
     }
-  }
+   }
   // TODO: Implement the wheelie method
-    // TODO: The method should log the message "Motorbike [make] [model] is doing a wheelie!"
-    wheelie(){
-      console.log(`Motorbike ${this.make} ${this.model} is doing a wheelie!`);
+  // TODO: The method should log the message "Motorbike [make] [model] is doing a wheelie!"
+  wheelie() {
+    console.log(`Motorbike ${this.make} ${this.model} is doing a wheelie!`);
   }
 
   // TODO: Declare properties of the Motorbike class
@@ -62,17 +63,15 @@ class Motorbike extends Vehicle {
   // TODO: The method should call the printDetails method of the parent class
   // TODO: The method should log the details of the Motorbike
   // TODO: The details should include the VIN, make, model, year, weight, top speed, color, and wheels
-}
 
-// Call the printDetails method of the parent class, Vehicle
-function printDetails() {
-  throw new Error('Function not implemented.');
-}
-override  printDetails() : void  {
-  // Call the printDetails method of the parent class, Vehicle
-  super.printDetails() ,
 
-  // Print details of the Car class
+ // Call the printDetails method of the parent class, Vehicle
+ 
+ override printDetails() : void {
+
+  super.printDetails(),
+
+  // Print details of the Motorbike class
   console.log(`VIN: ${this.vin}`),
   console.log(`Color: ${this.color}`),
   console.log(`Make: ${this.make}`),
@@ -80,7 +79,7 @@ override  printDetails() : void  {
   console.log(`Year: ${this.year}`),
   console.log(`Weight: ${this.weight} lbs`),
   console.log(`Top Speed: ${this.topSpeed} mph`),
-
+  console.log(`motorbike1Wheels: ${this.motorbike1Wheels}`),
   // Print details of the wheels
   console.log(
     `Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`
@@ -89,8 +88,10 @@ override  printDetails() : void  {
     `Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`
   ),
 }
-}
 // Export the Motorbike class as the default export
+function printDetails(): void{
+  throw new Error('Function not implemented.');
+  }
 export default Motorbike;
 
 

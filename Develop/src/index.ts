@@ -9,7 +9,7 @@ import Cli from "./classes/Cli.js";
 const vehicles = [];
 
 // TODO: uncomment once trucks are implemented
-const truck1 = new Truck (
+const truck1 = new Truck(
   Cli.generateVin(),
   "red",
    "Ford", 
@@ -19,7 +19,7 @@ const truck1 = new Truck (
    120, 
    [], 
   //  10000);
-
+);
 // will use default wheels
 const car1 = new Car(
   Cli.generateVin(),
