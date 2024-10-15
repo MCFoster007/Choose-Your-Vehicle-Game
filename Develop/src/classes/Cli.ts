@@ -5,7 +5,7 @@ import Car from "./Car.js";
 import Motorbike from "./Motorbike.js";
 import Wheel from "./Wheel.js";
 // import { constructor } from "assert";
-import Vehicle from "./Vehicle.js";
+// import Vehicle from "./Vehicle.js";
 
 // define the Cli class
 class Cli {
@@ -34,15 +34,11 @@ class Cli {
     );
   }
 
-  interface chooseVehicle {
-    vin: string;
-    make: string;
-    model: string;
-  }
+
 
 
   // method to choose a vehicle from existing vehicles
-  chooseVehicle();  {
+  chooseVehicle(): void  {
     inquirer
       .prompt([
         {

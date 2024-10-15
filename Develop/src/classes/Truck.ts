@@ -1,9 +1,9 @@
 // import the Vehicle, Motorbike, Car, Wheel, and AbleToTow classes/interfaces
 
-// import Motorbike from './Motorbike.js';
-// import Car from './Car.js';
+import Motorbike from './Motorbike.js';
+import Car from './Car.js';
 
-// import AbleToTow from '../interfaces/AbleToTow.js';
+import AbleToTow from '../interfaces/AbleToTow.js';
 import Vehicle from './Vehicle.js';
 import Wheel from './Wheel.js';
 // TODO: The Truck class should extend the Vehicle class and should implement the AbleToTow interface
@@ -32,17 +32,17 @@ import Wheel from './Wheel.js';
 
     // TODO: The details should include the VIN, make, model, year, weight, top speed, color, towing capacity, and wheels
     // override
-    class Truck extends Vehicle {
+    class Truck extends Vehicle implements AbleToTow{
       // Declare properties of the truck class
       vin: string;
       color: string;
-      override make: string;
-      override model: string;
+      make: string;
+      model: string;
       year: number;
       weight: number;
       topSpeed: number;
       wheels: Wheel[];
-    
+      towingCapacity: number;
       // Constructor for the truck class
       constructor(
         vin: string,
@@ -52,7 +52,8 @@ import Wheel from './Wheel.js';
         year: number,
         weight: number,
         topSpeed: number,
-        wheels: Wheel[]
+        wheels: Wheel[],
+        towingCapacity: number,
       ) {
         // Call the constructor of the parent class, Vehicle
         super();
@@ -74,7 +75,9 @@ import Wheel from './Wheel.js';
           this.wheels = wheels;
         }
       }
-    
+      tow(vehicle: Car | Motorbike | Truck): void {
+        console.log(`Truck ${this.make} ${this.model} is towing ${vehicle.make} ${vehicle.model}!`);
+    }
       // Override the printDetails method from the Vehicle class
       override printDetails(): void {
         // Call the printDetails method of the parent class, Vehicle
@@ -88,7 +91,7 @@ import Wheel from './Wheel.js';
         console.log(`Year: ${this.year}`);
         console.log(`Weight: ${this.weight} lbs`);
         console.log(`Top Speed: ${this.topSpeed} mph`);
-    
+        console.log(`towingCapacity: ${this.towingCapacity}`);
         // Print details of the wheels
         console.log(
           `Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`
@@ -115,68 +118,48 @@ import Wheel from './Wheel.js';
 
 // Export the Truck class as the default export
 // export default Truck;
-function printDetails() {
-  throw new Error('Function not implemented.');
-}
+// function printDetails() {
+//   throw new Error('Function not implemented.');
+// }
 
-function override(arg0: void) {
-  throw new Error('Function not implemented.');
-}
+// function override(arg0: void) {
+//   throw new Error('Function not implemented.');
+// }
 
   // declare the properties
-  interface AbleToTow {
-    towingCapacity: number;
-}
+//   interface AbleToTow {
+//     towingCapacity: number;
+// }
 
-class Vehicle {
-    make: string;
-    model: string;
-  printDetails: any;
 
-    constructor(make: string, model: string) {
-        this.make = make;
-        this.model = model;
-    }
-}
 
-class Truck  extends Vehicle implements AbleToTow {
-    towingCapacity: number;
 
-    constructor(make: string, model: string, towingCapacity: number) {
-        super(make, model);
-        this.towingCapacity = towingCapacity;
-    }
 
-    tow(vehicle: Vehicle): void {
-        console.log(`Truck ${this.make} ${this.model} is towing ${vehicle.make} ${vehicle.model}!`);
-    }
-}
+// class Motorbike extends Vehicle implements AbleToTow {
+//     towingCapacity: number;
 
-class Motorbike extends Vehicle implements AbleToTow {
-    towingCapacity: number;
+//     constructor(make: string, model: string, towingCapacity: number) {
+//         super(make, model);
+//         this.towingCapacity = towingCapacity;
+//     }
 
-    constructor(make: string, model: string, towingCapacity: number) {
-        super(make, model);
-        this.towingCapacity = towingCapacity;
-    }
+//     tow(vehicle: Vehicle): void {
+//         console.log(`Motorbike ${this.make} ${this.model} is towing ${vehicle.make} ${vehicle.model}!`);
+//     }
+// }
 
-    tow(vehicle: Vehicle): void {
-        console.log(`Motorbike ${this.make} ${this.model} is towing ${vehicle.make} ${vehicle.model}!`);
-    }
-}
+// class Car extends Vehicle implements AbleToTow {
+//     towingCapacity: number;
 
-class Car extends Vehicle implements AbleToTow {
-    towingCapacity: number;
+//     constructor(make: string, model: string, towingCapacity: number) {
+//         super(make, model);
+//         this.towingCapacity = towingCapacity;
+//     }
 
-    constructor(make: string, model: string, towingCapacity: number) {
-        super(make, model);
-        this.towingCapacity = towingCapacity;
-    }
-
-    tow(vehicle: Vehicle): void {
-        console.log(`Car ${this.make} ${this.model} is towing ${vehicle.make} ${vehicle.model}!`);
-    }
-}
+//     tow(vehicle: Vehicle): void {
+//         console.log(`Car ${this.make} ${this.model} is towing ${vehicle.make} ${vehicle.model}!`);
+//     }
+// }
 // tow method takes a truck or a motorbike or a car as an argument
 // export the interface
-export default AbleToTow;
+export default Truck;
