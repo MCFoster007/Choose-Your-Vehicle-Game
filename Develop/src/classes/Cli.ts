@@ -13,6 +13,7 @@ class Cli {
   vehicles: (Car | Truck | Motorbike)[];
   selectedVehicleVin: string | undefined;
   exit: boolean = false;
+  startCli: any;
 
   // TODO: Update the constructor to accept Truck and Motorbike objects as well
   constructor(vehicles: (Car| Truck | Motorbike)[]) {
@@ -44,12 +45,15 @@ class Cli {
           }),
         },
       ])
-      .then((answers) => {
+      .then((answers: { selectedVehicleVin: string | undefined; }) => {
         // set the selectedVehicleVin to the vin of the selected vehicle
         this.selectedVehicleVin = answers.selectedVehicleVin;
         // perform actions on the selected vehicle
         this.performActions();
       });
+  }
+  performActions() {
+    throw new Error("Method not implemented.");
   }
 
   // method to create a vehicle
@@ -64,7 +68,10 @@ class Cli {
           choices: ['Car', 'Truck', 'Motorbike'],
         },
       ])
-      .then((answers) => {
+      .then(answers: { vehicleType: string, createCar: () => void;
+         createTruck: () => void; 
+         createMotorbike: () => void; }) => {
+          
         if (answers.vehicleType === 'Car') {
           // create a car
           return this.createVehicle = (answers.createCar);
@@ -117,7 +124,8 @@ class Cli {
           message: 'Enter Top Speed',
         },
       ])
-      .then((answers) => {
+      // { color: string; make: string; model: string; year: string; weight: string; topSpeed: string; }
+      .then((answers: { color: string; make: string; model: string; year: string; weight: string; topSpeed: string; }) => {
         const car = new Car(
           // TODO: The generateVin method is static and should be called using the class name Cli, make sure to use Cli.generateVin() for creating a truck and motorbike as well!
           Cli.generateVin(),
@@ -180,7 +188,7 @@ class Cli {
       ])
       
           // TODO: The generateVin method is static and should be called using the class name Cli, make sure to use Cli.generateVin() for creating a truck and motorbike as well!
-          .then((answers) => {
+          .then((answers: { color: any; make: any; model: any; year: string; weight: string; topSpeed: string; towingCapacity: string; }) => {
             const truck = new Truck(
               Cli.generateVin(), 
               answers.color,
@@ -261,7 +269,7 @@ class Cli {
         },
       ])
       
-        .then((answers) => {
+        .then((answers: { color: string; make: string; model: string; year: string; weight: string; topSpeed: string; towingCapacity: string; }) => {
           const motorbike = new Motorbike(
             Cli.generateVin(), 
             answers.color,
@@ -298,7 +306,7 @@ class Cli {
           type: 'list',
           name: 'vehicleToTow',
           message: 'Select a vehicle to tow',
-          choices: this.vehicles.map((vehicle) => {
+          choices: this.vehicles.map((vehicle: { vin: any; make: any; model: any; }) => {
             return {
               name: `${vehicle.vin} -- ${vehicle.make} ${vehicle.model}`,
               value: vehicle,
@@ -306,7 +314,7 @@ class Cli {
           }),
         },
       ])
-      .then((answers) => {
+      .then((answers: { vehicleToTow: { vin: any; make: any; model: any; }; }) => {
         // Check if the selected vehicle is the truck
         if (answers.vehicleToTow.vin === this.selectedVehicleVin) {
           console.log('Truck cannot tow itself. Select another vehicle.');
@@ -348,7 +356,7 @@ class Cli {
           ],
         },
       ])
-      .then((answers) => {
+      .then((answers: { action: string; }) => {
         // perform the selected action
         if (answers.action === 'Print details') {
           // find the selected vehicle and print its details
@@ -412,7 +420,7 @@ class Cli {
         //After calling the findVehicleToTow method, you will need to return to avoid instantly calling 
         //the performActions method again since findVehicleToTow is asynchronous.
         // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike
-        function performActions(selectedVehicle)) {
+        function performActions(selectedVehicle: any)) {
           if (selectedVehicle.type === 'truck') {
   
               findVehicleToTow(selectedVehicle)
@@ -456,7 +464,7 @@ class Cli {
           choices: ['Create a new vehicle', 'Select an existing vehicle'],
         },
       ])
-      .then((answers) => {
+      .then((answers: { CreateOrSelect: string; }) => {
         // check if the user wants to create a new vehicle or select an existing vehicle
         if (answers.CreateOrSelect === 'Create a new vehicle') {
           this.createVehicle();
@@ -469,3 +477,41 @@ class Cli {
 
 // export the Cli class
 export default Cli;
+
+function createCar() {
+  throw new Error("Function not implemented.");
+}
+
+
+function createTruck() {
+  throw new Error("Function not implemented.");
+}
+
+
+function createMotorbike() {
+  throw new Error("Function not implemented.");
+}
+
+
+function findVehicleToTow() {
+  throw new Error("Function not implemented.");
+}
+
+
+function performActions() {
+  throw new Error("Function not implemented.");
+}
+
+
+function performWheelie(selectedVehicle: any) {
+  throw new Error("Function not implemented.");
+}
+
+
+function startCli() {
+  throw new Error("Function not implemented.");
+}
+function answers(value: any) {
+  throw new Error("Function not implemented.");
+}
+

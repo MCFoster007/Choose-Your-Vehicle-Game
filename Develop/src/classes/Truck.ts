@@ -1,9 +1,9 @@
 // import the Vehicle, Motorbike, Car, Wheel, and AbleToTow classes/interfaces
 import Vehicle from './Vehicle.js';
-import Motorbike from './Motorbike.js';
+// import Motorbike from './Motorbike.js';
 import Car from './Car.js';
 import Wheel from './Wheel.js';
-import AbleToTow from '../interfaces/AbleToTow.js';
+// import AbleToTow from '../interfaces/AbleToTow.js';
 
 // TODO: The Truck class should extend the Vehicle class and should implement the AbleToTow interface
 class Truck {
@@ -129,16 +129,16 @@ export default AbleToTow;
     // TODO: The details should include the VIN, make, model, year, weight, top speed, color, towing capacity, and wheels
     override printDetails(): void {
   // Call the printDetails method of the parent class, Vehicle
-  super.printDetails();
+  super:printDetails(),
 
   // Print details of the Car class
-  console.log(`VIN: ${this.vin}`);
-  console.log(`Color: ${this.color}`);
-  console.log(`Make: ${this.make}`);
-  console.log(`Model: ${this.model}`);
-  console.log(`Year: ${this.year}`);
-  console.log(`Weight: ${this.weight} lbs`);
-  console.log(`Top Speed: ${this.topSpeed} mph`);
+  console.log(`VIN: ${this.vin}`),
+  console.log(`Color: ${this.color}`),
+  console.log(`Make: ${this.make}`),
+  console.log(`Model: ${this.model}`),
+  console.log(`Year: ${this.year}`),
+  console.log(`Weight: ${this.weight} lbs`),
+  console.log(`Top Speed: ${this.topSpeed} mph`),
 
   // Print details of the wheels
   console.log(
@@ -165,3 +165,7 @@ export default Car;
 
 // Export the Truck class as the default export
 export default Truck;
+function printDetails() {
+  throw new Error('Function not implemented.');
+}
+
