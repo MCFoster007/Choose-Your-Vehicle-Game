@@ -42,7 +42,7 @@ import Wheel from './Wheel.js';
       weight: number;
       topSpeed: number;
       wheels: Wheel[];
-      towingCapacity: number;
+      towingCapacity!: number;
       // Constructor for the truck class
       constructor(
         vin: string,
