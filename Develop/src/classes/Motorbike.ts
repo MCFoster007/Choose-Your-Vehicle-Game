@@ -23,7 +23,8 @@ class Motorbike extends Vehicle {
     year: number,
     weight: number,
     topSpeed: number,
-    wheels: Wheel[]
+    wheels: Wheel[],
+    motorbike1Wheels: any,
   ) {
     // Call the constructor of the parent class, Vehicle
     super();
@@ -86,12 +87,13 @@ class Motorbike extends Vehicle {
   ),
   console.log(
     `Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`
-  ),
+  );
+ };
 }
 // Export the Motorbike class as the default export
-function printDetails(): void{
-  throw new Error('Function not implemented.');
-  }
+// function printDetails(): void{
+//   throw new Error('Function not implemented.');
+//   
 export default Motorbike;
 
 
