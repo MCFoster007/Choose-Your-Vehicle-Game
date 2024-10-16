@@ -16,13 +16,15 @@ class Cli {
   selectedVehicleVin: string | undefined;
   exit: boolean = false;
   startCli: any;
-  selectedVehicle
+  selectedVehicle: any;
+
 
 
 
   // TODO: Update the constructor to accept Truck and Motorbike objects as well
   constructor(vehicles: (Car | Truck | Motorbike)[]) {
     this.vehicles = vehicles;
+  
   }
 
   // static method to generate a vin
@@ -134,7 +136,7 @@ createCar(): void {
     },
   ])
     // { color: string; make: string; model: string; year: string; weight: string; topSpeed: string; }
-    .then( (answers: { color: string; make: string; model: string; year: string; weight: string; topSpeed: string; }) => {
+    .then((answers: { color: string; make: string; model: string; year: string; weight: string; topSpeed: string; }) => {
       const car = new Car(
         // TODO: The generateVin method is static and should be called using the class name Cli, make sure to use Cli.generateVin() for creating a truck and motorbike as well!
         Cli.generateVin(),
@@ -145,13 +147,14 @@ createCar(): void {
         parseInt(answers.weight),
         parseInt(answers.topSpeed),
         [],
-      ),
-      // push the car to the vehicles array
+      )
       this.vehicles.push(Car),
-      // set the selectedVehicleVin to the vin of the car
-      this.selectedVehicleVin = car.vin,
-      // perform actions on the car
-      this.performActions(),
+
+
+        // set the selectedVehicleVin to the vin of the car
+        this.selectedVehicleVin = car.vin,
+        // perform actions on the car
+        this.performActions(),
     });
 }
 
@@ -283,29 +286,29 @@ createMotorbike(): void {
     },
   ])
 
-   .then((answers: {
-      wheel: any; color: string; make: string; model: string; year: string; weight: string; topSpeed: string; towingCapacity: string; 
-       }) => {
-      const motorbike = new Motorbike(
-        Cli.generateVin(),
-        answers.color,
-        answers.make,
-        answers.model,
-        parseInt(answers.year),
-        parseInt(answers.weight),
-        parseInt(answers.topSpeed),
-        parseInt(answers.wheel),
-        parseInt(answers.towingCapacity),
-          // Ensure you include towing capacity if needed
-      );
-      // Push the truck to the vehicles array
-      this.vehicles.push(motorbike);
+  .then((answers: {
+    wheel: any; color: string; make: string; model: string; year: string; weight: string; topSpeed: string; towingCapacity: string; 
+     }) => {
+    const motorbike = new Motorbike(
+      Cli.generateVin(),
+      answers.color,
+      answers.make,
+      answers.model,
+      parseInt(answers.year),
+      parseInt(answers.weight),
+      parseInt(answers.topSpeed),
+      parseInt(answers.wheel),
+      parseInt(answers.towingCapacity),
+        // Ensure you include towing capacity if needed
+    );
+    // Push the truck to the vehicles array
+    this.vehicles.push(motorbike);
 
-      // Set the selectedVehicleVin to the vin of the truck
-      this.selectedVehicleVin = motorbike.vin;
-      // Perform actions on the truck
-      this.performActions();
-    }),
+    // Set the selectedVehicleVin to the vin of the truck
+    this.selectedVehicleVin = motorbike.vin;
+    // Perform actions on the truck
+    this.performActions();
+  }),
 
   // TODO: Use the answers object to pass the required properties to the Motorbike constructor
   // TODO: push the motorbike to the vehicles array
@@ -456,19 +459,19 @@ performActions(): void {
         }
 
       }
-         else if(answers.action === 'Select or create another vehicle') {
-  // start the cli to return to the initial prompt if the user wants to select or create another vehicle
-  this.startCli();
-  return;
-} else {
-  // exit the cli if the user selects exit
-  this.exit = true;
-}
-if (!this.exit) {
-  // if the user does not want to exit, perform actions on the selected vehicle
-  this.performActions(selectedVehicle);
-};
 
+      else if(answers.action === 'Select or create another vehicle') {
+        // start the cli to return to the initial prompt if the user wants to select or create another vehicle
+        this.startCli();
+        return;
+      } else  {
+        // exit the cli if the user selects exit
+        this.exit = true;
+      }
+      if (!this.exit) {
+        // if the user does not want to exit, perform actions on the selected vehicle
+        this.performActions(selectedVehicle);
+      };
 
 // method to start the cli
 startCli(); void {
@@ -492,44 +495,70 @@ startCli(); void {
     }),
 }
 
+// function createCar() {
+//   throw new Error("Function not implemented.");
+// }
+
+
+// function createTruck() {
+//   throw new Error("Function not implemented.");
+// }
+
+
+// function createMotorbike() {
+//   throw new Error("Function not implemented.");
+// }
+
+
+// function findVehicleToTow(selectedVehicle: any) {
+//   throw new Error("Function not implemented.");
+// }
+
+
+// function performActions() {
+//   throw new Error("Function not implemented.");
+// }
+
+
+// function performWheelie(selectedVehicle: any) {
+//   throw new Error("Function not implemented.");
+// }
+
+
+// function startCli() {
+//   throw new Error("Function not implemented.");
+// }
+function answers(value: any) {
+  throw new Error("Function not implemented.");
+}
 
 // export the Cli class
 export default Cli;
 
+function findVehicleToTow(selectedVehicle: any) {
+  throw new Error("Function not implemented.");
+}
 function createCar() {
   throw new Error("Function not implemented.");
 }
-
 
 function createTruck() {
   throw new Error("Function not implemented.");
 }
 
-
 function createMotorbike() {
   throw new Error("Function not implemented.");
 }
-
-
-function findVehicleToTow(selectedVehicle: any) {
-  throw new Error("Function not implemented.");
-}
-
 
 function performActions() {
   throw new Error("Function not implemented.");
 }
 
-
 function performWheelie(selectedVehicle: any) {
   throw new Error("Function not implemented.");
 }
 
-
 function startCli() {
-  throw new Error("Function not implemented.");
-}
-function answers(value: any) {
   throw new Error("Function not implemented.");
 }
 
