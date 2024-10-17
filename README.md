@@ -22,7 +22,8 @@ Create a new repository on GitHub to push the info through and have it shown up 
 
 ## Usage
 Walkthrough Video
-https://i9.ytimg.com/vi/6eSV8d7lEcw/mqdefault.jpg?sqp=CPyfwbgG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGE0gZShiMA8=&rs=AOn4CLDM8ACoGOHH8QfZ_cbIhUXK52kn9A
+https://youtu.be/6eSV8d7lEcw
+
 
 
 ## Credits
