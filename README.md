@@ -1,20 +1,33 @@
 # Vehicle-Builder-Challenge
 
+## Table of Contents
+### Description
+### Installation
+### Usage
+### Credits
+### License
+### Features
+### How to Contribute
+### Testing
+
+
 ## Description
 To run the application using Typescript of creating a car, motorbike or truck by being prompt with a series of questions. Once selected your vehicle, you run through the questions and be asked to selected another vehicle, and repeat or exit the application. 
 
 
 ## Installation
 
-Prior to working on project, had to install node.js and npm.
+Prior to working on project, had to install node.js and npm(node package manager).  After the npm install, you had to do a npm start to see if the program was working.  
+Create a new repository on GitHub to push the info through and have it shown up there.
 
 ## Usage
-
+Walkthrough Video
+https://i9.ytimg.com/vi/6eSV8d7lEcw/mqdefault.jpg?sqp=CPyfwbgG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGE0gZShiMA8=&rs=AOn4CLDM8ACoGOHH8QfZ_cbIhUXK52kn9A
 
 
 ## Credits
 
-Sources from my tutors, Dan Mueller, seeking video assistance from YouTube, Reddit and Xpert LA.
+Sources from my tutors, TA: Mary and Sasha, Instructor: Dan Mueller, seeking video assistance from YouTube, Reddit and Xpert LA.
 
 ## License
 
@@ -43,11 +56,18 @@ SOFTWARE.
 
 ## Features
 
-TS for Car, Motorbike, Truck, Vehicle and Wheel.  Necessary to run the application.
+TypeScript
+Package.JSON
+tsconfig.json
+gitignore
+Use these programmings tools to create the vehicle building game.  You get to choose a New or Existing Vehicle (Car, Truck, Motorbike) then perform an action such as, Start, Accelerate, Stop, Tow or Wheelie (which is for the motorbike). You can Print Details such as, Vehicle started, VIN, Color, Model of the Vehicle and the wheels too.
+
 
 ## How to Contribute
 
 If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
 
+## Testing
+Tested the code after putting the command 'npm start'.  In the begining experienced errors and had to find why they occurred, after trouble shooting and with school assistance got them resolved and they are working as shown in the walkthrough video.
 ---
 &copy; 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
