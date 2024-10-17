@@ -1,4 +1,4 @@
-# Vehicle-Builder-Challenge
+# Choose your Vehicle Game
 
 ## Table of Contents
 ### Description
