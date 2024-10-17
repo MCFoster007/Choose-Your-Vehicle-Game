@@ -17,7 +17,7 @@ To run the application using Typescript of creating a car, motorbike or truck by
 
 ## Installation
 
-Prior to working on project, had to install node.js and npm(node package manager).  After the npm install, you had to do a npm start to see if the program was working.  
+Prior to working on project, had to install node.js and npm(node package manager).  After the npm install, you had to do a npm start to see if the program was working.  The challenge did provide a starter code and we had to add or delete to see what would work.
 Create a new repository on GitHub to push the info through and have it shown up there.
 
 ## Usage
